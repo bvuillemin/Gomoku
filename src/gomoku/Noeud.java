@@ -37,4 +37,12 @@ public class Noeud {
     public void ajouterDefaite() {
         this.nbVictoire--;
     }
+
+    public int getNbSimulation() {
+        return nbSimulation;
+    }
+
+    public void setNbSimulation(int nbSimulation) {
+        this.nbSimulation = nbSimulation;
+    }
 }
