@@ -4,10 +4,7 @@ import java.util.ArrayList;
 import JoueurGomoku.*;
 import JeuDeGomoku.*;
 
-/**
- *
- * @author p1105624
- */
+
 public class Gomoku {
 
     /**
