@@ -27,7 +27,7 @@ public class JoueurHumain extends Joueur {
         int a = s.nextInt();
         System.out.println("Y ?");
         int b = s.nextInt();
-        while (etatJeu.getEtatPlateau(a, b) != 0) {
+        while (etatJeu.getEtatPlateau(a - 1, b - 1) != 0) {
             System.out.println("La case est déjà occupée !");
             System.out.println("X ?");
             a = s.nextInt();

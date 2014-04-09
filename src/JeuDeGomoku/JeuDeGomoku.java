@@ -26,7 +26,7 @@ public class JeuDeGomoku {
     
     public boolean setJoueur(int ordre, Joueur joueur) {
         if (ordre == 1 || ordre == 2) {
-            tabJoueur[ordre] = joueur;
+            tabJoueur[ordre - 1] = joueur;
             return true;
         } else {
             System.out.println("Erreur dans l'attribution du joueur au jeu");
@@ -40,6 +40,8 @@ public class JeuDeGomoku {
     
     private Joueur joueurSuivant()
     {
+        if(this.joueurCourant == null)
+            return this.tabJoueur[0];
         if(this.joueurCourant.getId() == 1)
             return this.tabJoueur[1];
         if(this.joueurCourant.getId() == 2)
@@ -55,9 +57,9 @@ public class JeuDeGomoku {
         {
             for(int j = 1; j <= 9; j++)
             {
-                if(this.plateau.CheckLigneId(new Position(i, j), 1, this.valeur_victoire))
+                if(this.plateau.CheckLigneId(new Position(i, j), this.valeur_victoire, 1))
                     return true;
-                if(this.plateau.CheckLigneId(new Position(i, j), 2, this.valeur_victoire))
+                if(this.plateau.CheckLigneId(new Position(i, j), this.valeur_victoire, 2))
                     return true;
             }
         }
@@ -66,9 +68,9 @@ public class JeuDeGomoku {
         {
             for(int j = 1; j <= 5; j++)
             {
-                if(this.plateau.CheckColonneId(new Position(i, j), 1, this.valeur_victoire))
+                if(this.plateau.CheckColonneId(new Position(i, j), this.valeur_victoire, 1))
                     return true;
-                if(this.plateau.CheckColonneId(new Position(i, j), 2, this.valeur_victoire))
+                if(this.plateau.CheckColonneId(new Position(i, j), this.valeur_victoire, 2))
                     return true;
             }
         }
@@ -82,15 +84,16 @@ public class JeuDeGomoku {
         int y = coup.getPos().getY();
         if(x > 0 && x <= 9)
             if(y > 0 && y <= 9)
-                if(this.plateau.getEtatPlateau(x, y) == 0) //Teste si la case est vide
+                if(this.plateau.getEtatPlateau(x - 1, y - 1) == 0) //Teste si la case est vide
                     return true;
         return false;
     }
     
     public Joueur jouerPartie(){
         boolean valide;
-        while(partieTerminee())
+        while(!partieTerminee())
         {
+            System.out.println(this.plateau.toString());
             valide = false;
             this.joueurCourant = joueurSuivant();
             
@@ -103,7 +106,7 @@ public class JeuDeGomoku {
                     System.out.println("Coup non valide");
             }
         }
-        
+        System.out.println(this.joueurCourant);
         return this.joueurCourant;
     }
     

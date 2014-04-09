@@ -23,11 +23,11 @@ public class JoueurAleatoire extends Joueur {
         Position p;
         int x = Utilitaire.monRandom(1, etatJeu.getLongueur());
         int y = Utilitaire.monRandom(1, etatJeu.getLargeur());
-        while (etatJeu.getEtatPlateau(x, y) != 0) {
+        while (etatJeu.getEtatPlateau(x - 1, y - 1) != 0) {
             x = Utilitaire.monRandom(1, etatJeu.getLongueur());
             y = Utilitaire.monRandom(1, etatJeu.getLargeur());
         }
-        p = new Position(x, y);
+        p = new Position(x - 1, y - 1);
         c = new Coup(this.id, p);
         return c;
     }
