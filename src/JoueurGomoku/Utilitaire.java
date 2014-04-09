@@ -6,10 +6,7 @@
 
 package JoueurGomoku;
 import java.util.*;
-/**
- *
- * @author p1106866
- */
+
 public class Utilitaire {
     public static int monRandom(int min, int max)
     {

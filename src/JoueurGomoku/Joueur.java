@@ -6,10 +6,7 @@
 package JoueurGomoku;
 import gomoku.*;
 
-/**
- *
- * @author p1106866
- */
+
 public abstract class Joueur {
 
     protected int id;

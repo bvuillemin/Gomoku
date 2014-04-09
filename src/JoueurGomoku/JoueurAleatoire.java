@@ -7,10 +7,6 @@ package JoueurGomoku;
 
 import gomoku.*;
 
-/**
- *
- * @author p1106866
- */
 public class JoueurAleatoire extends Joueur {
 
     public JoueurAleatoire(int _id) {
