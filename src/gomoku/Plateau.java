@@ -86,6 +86,14 @@ public class Plateau {
     public int getEtatPlateau(int x, int y){
         return this.etatPlateau[x][y];
     }
+    
+    public int getDernierID()
+    {
+        if(!this.historique.isEmpty())
+            return this.historique.get(this.historique.lastIndexOf(this)).getId();
+        else 
+            return 0;
+    }
 
     @Override
     public String toString() {

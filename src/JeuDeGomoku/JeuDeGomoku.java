@@ -16,6 +16,11 @@ public class JeuDeGomoku {
         this.plateau = new PlateauGomoku();
         this.tabJoueur = new Joueur[2];
         this.valeur_victoire = 5;
+        
+        if(this.plateau.getDernierID() == 0)
+            this.joueurCourant = this.tabJoueur[0];
+        else
+            this.joueurCourant = this.tabJoueur[this.plateau.getDernierID() - 1];
         }
     }
     
