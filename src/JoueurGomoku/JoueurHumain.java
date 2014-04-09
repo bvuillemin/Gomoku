@@ -8,10 +8,6 @@ package JoueurGomoku;
 import gomoku.*;
 import java.util.Scanner;
 
-/**
- *
- * @author p1106866
- */
 public class JoueurHumain extends Joueur {
 
     public JoueurHumain(int _id) {
