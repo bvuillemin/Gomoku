@@ -13,7 +13,7 @@ public class JeuDeGomoku {
     public JeuDeGomoku(boolean b)
     {
         if(b){
-        this.plateau = new PlateauGomoku(9, 9);
+        this.plateau = new PlateauGomoku();
         this.tabJoueur = new Joueur[2];
         this.valeur_victoire = 5;
         }
