@@ -22,5 +22,5 @@ public abstract class Joueur {
         return id;
     }
     
-    abstract Coup genererCoup(Plateau etatJeu);
+    public abstract Coup genererCoup(Plateau etatJeu);
 }
