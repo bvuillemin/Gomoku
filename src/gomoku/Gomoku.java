@@ -1,7 +1,7 @@
 package gomoku;
 
 import java.util.ArrayList;
-
+import JoueurGomoku.*;
 /**
  *
  * @author p1105624
@@ -52,7 +52,10 @@ public class Gomoku {
         System.out.println("Reinitialisation du plateau");
         p.initialiser();
         System.out.println(p);
-
+        JoueurHumain j = new JoueurHumain(1);
+        Coup c = j.genererCoup(p);
+        p.jouer(c);
+        System.out.println(p);
     }
     
 }
