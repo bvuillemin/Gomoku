@@ -6,7 +6,7 @@ public class PlateauGomoku extends Plateau{
         super(longueur, largeur);
     }
     
-    public boolean CheckLigneId(Position pos, int n,int id)
+    public boolean CheckLigneId(Position pos, int id,int n)
     {
         int x=pos.getX();
         int y=pos.getY();
@@ -25,7 +25,7 @@ public class PlateauGomoku extends Plateau{
         }
     }
     
-    public boolean CheckColonneId(Position pos, int n,int id)
+    public boolean CheckColonneId(Position pos, int id,int n)
     {
         int x=pos.getX();
         int y=pos.getY();
