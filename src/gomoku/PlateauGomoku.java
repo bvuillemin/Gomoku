@@ -2,8 +2,8 @@ package gomoku;
 
 public class PlateauGomoku extends Plateau{
 
-    public PlateauGomoku(int longueur, int largeur) {
-        super(longueur, largeur);
+    public PlateauGomoku() {
+        super(9, 9);
     }
     
     public boolean CheckLigneId(Position pos, int n,int id)

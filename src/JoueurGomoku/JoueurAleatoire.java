@@ -3,23 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package JoueurGomoku;
+
+import gomoku.*;
 
 /**
  *
  * @author p1106866
  */
-public class JoueurAleatoire extends Joueur{
-    public JoueurAleatoire(int _id)
-    {
+public class JoueurAleatoire extends Joueur {
+
+    public JoueurAleatoire(int _id) {
         super(_id);
     }
-    public Coup genererCoup(Plateau etatJeu)
-    {
-        int a = monRandom()
-        while (monRandom)
-        Coup c = new Coup(this.id, );
-        
+
+    @Override
+    public Coup genererCoup(Plateau etatJeu) {
+        Coup c;
+        Position p;
+        int x = Utilitaire.monRandom(1, etatJeu.getLongueur());
+        int y = Utilitaire.monRandom(1, etatJeu.getLargeur());
+        while (etatJeu.getEtatPlateau(x, y) != 0) {
+            x = Utilitaire.monRandom(1, etatJeu.getLongueur());
+            y = Utilitaire.monRandom(1, etatJeu.getLargeur());
+        }
+        p = new Position(x, y);
+        c = new Coup(this.id, p);
+        return c;
     }
 }

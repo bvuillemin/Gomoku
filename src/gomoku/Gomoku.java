@@ -1,7 +1,7 @@
 package gomoku;
 
 import java.util.ArrayList;
-
+import JoueurGomoku.*;
 /**
  *
  * @author p1105624
@@ -12,7 +12,7 @@ public class Gomoku {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        PlateauGomoku p = new PlateauGomoku(6,7);
+        PlateauGomoku p = new PlateauGomoku();
         System.out.println(p);
         System.out.println("Chargement d'une configuration initiale");
         ArrayList<Coup> positionInitiale = new ArrayList<Coup>();
@@ -52,7 +52,10 @@ public class Gomoku {
         System.out.println("Reinitialisation du plateau");
         p.initialiser();
         System.out.println(p);
-
+        JoueurHumain j = new JoueurHumain(1);
+        Coup c = j.genererCoup(p);
+        p.jouer(c);
+        System.out.println(p);
     }
     
 }
