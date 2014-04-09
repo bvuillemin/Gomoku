@@ -1,6 +1,9 @@
 package gomoku;
 
 import java.util.ArrayList;
+import java.lang.Object;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Plateau {
 
@@ -33,13 +36,23 @@ public class Plateau {
         }
         for(Coup c: liste)
         {
-            this.jouer(c);
+            try {
+                this.jouer(c);
+            } catch (Exception ex) {
+                System.out.println("Erreur, coup invalide");
+            }
         }
     }
 
-    public void jouer(Coup cp) {
-        this.etatPlateau[cp.getPos().getX()][cp.getPos().getY()] = cp.getId();
-        this.historique.add(cp);
+    public boolean jouer(Coup cp) {
+        if ((cp.getPos().getX() - 1) >= 0 && (cp.getPos().getX() - 1) < longueur && (cp.getPos().getY() - 1 >= 0) && (cp.getPos().getY() - 1 < largeur)) {
+            this.etatPlateau[cp.getPos().getX() - 1][cp.getPos().getY() - 1] = cp.getId();
+            this.historique.add(cp);
+            return true;
+        } else {
+            System.out.println("Coup invalide");
+            return false;
+        }
     }
 
     public ArrayList<Position> etatId(int id) {
