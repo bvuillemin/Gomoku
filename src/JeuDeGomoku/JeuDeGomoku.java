@@ -3,56 +3,15 @@ package JeuDeGomoku;
 import gomoku.*;
 import JoueurGomoku.*;
 
-public class JeuDeGomoku {
-    
-    private PlateauGomoku plateau;
-    private Joueur[] tabJoueur;
-    private Joueur joueurCourant;
-    private int valeur_victoire;
-    
-    public JeuDeGomoku(boolean b)
-    {
-        if(b){
+public class JeuDeGomoku extends JeuDePlateau{
+
+    public JeuDeGomoku() {
+        super();
         this.plateau = new PlateauGomoku();
-        this.tabJoueur = new Joueur[2];
-        this.valeur_victoire = 5;
-        
-        if(this.plateau.getDernierID() == 0)
-            this.joueurCourant = this.tabJoueur[0];
-        else
-            this.joueurCourant = this.tabJoueur[this.plateau.getDernierID() - 1];
-        }
-    }
-    
-    public JeuDeGomoku()
-    {
-        
-    }
-    
-    public boolean setJoueur(int ordre, Joueur joueur) {
-        if (ordre == 1 || ordre == 2) {
-            tabJoueur[ordre - 1] = joueur;
-            return true;
-        } else {
-            System.out.println("Erreur dans l'attribution du joueur au jeu");
-            return false;
-        }
     }
     
     public void setPlateau(PlateauGomoku plateau){
         this.plateau = plateau;
-    }
-    
-    private Joueur joueurSuivant()
-    {
-        if(this.joueurCourant == null)
-            return this.tabJoueur[0];
-        if(this.joueurCourant.getId() == 1)
-            return this.tabJoueur[1];
-        if(this.joueurCourant.getId() == 2)
-            return this.tabJoueur[0];
-        else
-            return this.tabJoueur[0];
     }
     
     public boolean partieTerminee()
@@ -93,27 +52,4 @@ public class JeuDeGomoku {
                     return true;
         return false;
     }
-    
-    public Joueur jouerPartie(){
-        boolean valide;
-        while(!partieTerminee())
-        {
-            System.out.println(this.plateau.toString());
-            valide = false;
-            this.joueurCourant = joueurSuivant();
-            
-            while(!valide){
-                Coup c = this.joueurCourant.genererCoup(this.plateau);
-                valide = coupValide(c);
-                if(valide)
-                    this.plateau.jouer(c);
-                else
-                    System.out.println("Coup non valide");
-            }
-        }
-        System.out.println(this.joueurCourant);
-        return this.joueurCourant;
-    }
-    
-    
 }

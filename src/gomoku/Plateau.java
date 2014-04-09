@@ -5,7 +5,7 @@ import java.lang.Object;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Plateau {
+public abstract class Plateau {
 
     private int longueur;
     private int largeur;
@@ -107,5 +107,9 @@ public class Plateau {
 
         return grille.toString();
     }
+
+    public abstract boolean CheckLigneId(Position position, int valeur_victoire, int i);
+
+    public abstract boolean CheckColonneId(Position position, int valeur_victoire, int i);
 
 }

@@ -60,7 +60,7 @@ public class Gomoku {
         System.out.println(p);*/
         
         PlateauGomoku p = new PlateauGomoku();
-        JeuDeGomoku jeu = new JeuDeGomoku(true);
+        JeuDeGomoku jeu = new JeuDeGomoku();
         JoueurHumain jh = new JoueurHumain(1);
         JoueurAleatoire ja = new JoueurAleatoire(2);
         
