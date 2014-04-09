@@ -12,7 +12,7 @@ public class Gomoku {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        PlateauGomoku p = new PlateauGomoku(6,7);
+        PlateauGomoku p = new PlateauGomoku();
         System.out.println(p);
         System.out.println("Chargement d'une configuration initiale");
         ArrayList<Coup> positionInitiale = new ArrayList<Coup>();

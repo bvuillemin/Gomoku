@@ -10,9 +10,9 @@ import gomoku.*;
  *
  * @author p1106866
  */
-public class Joueur {
+public abstract class Joueur {
 
-    private int id;
+    protected int id;
 
     public Joueur(int _id) {
         this.id = _id;
@@ -22,5 +22,5 @@ public class Joueur {
         return id;
     }
     
-    public abstract Coup genererCoup(Plateau etatJeu);
+    abstract Coup genererCoup(Plateau etatJeu);
 }

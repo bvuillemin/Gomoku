@@ -6,6 +6,8 @@
 
 package JoueurGomoku;
 
+import gomoku.*;
+
 /**
  *
  * @author p1106866
@@ -15,11 +17,21 @@ public class JoueurAleatoire extends Joueur{
     {
         super(_id);
     }
+    
+    @Override
     public Coup genererCoup(Plateau etatJeu)
     {
-        int a = monRandom()
-        while (monRandom)
-        Coup c = new Coup(this.id, );
-        
+        Coup c;
+        Position p;
+        int a = Utilitaire.monRandom(1, etatJeu.getLongueur());
+        int b = Utilitaire.monRandom(1, etatJeu.getLargeur());
+        while(etatJeu.getEtatPlateau(a, b) != 0)
+        {
+            a = Utilitaire.monRandom(1, etatJeu.getLongueur());
+            b = Utilitaire.monRandom(1, etatJeu.getLargeur());
+        }
+        p = new Position(a, b);
+        c = new Coup(this.id,p);
+        return c;
     }
 }
