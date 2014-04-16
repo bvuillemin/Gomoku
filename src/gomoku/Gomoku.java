@@ -56,7 +56,7 @@ public class Gomoku {
         p.jouer(c);
         System.out.println(p);*/
         
-        PlateauGomoku p = new PlateauGomoku();
+       /* PlateauGomoku p = new PlateauGomoku();
         JeuDeGomoku jeu = new JeuDeGomoku();
         JoueurHumain jh = new JoueurHumain(1);
         JoueurAleatoire ja = new JoueurAleatoire(2);
@@ -64,9 +64,25 @@ public class Gomoku {
         jeu.setPlateau(p);
         jeu.setJoueur(1, jh);
         jeu.setJoueur(2, ja); 
+        */
         
-        jeu.plateau.jouer(new Coup(1, new Position(8, 9)));
-        jeu.plateau.jouer(new Coup(2, new Position(1, 1)));
+        JeuDePlateau jeu;
+        JeuDeGomokuFactory factory = new JeuDeGomokuFactory();
+        ArrayList<Coup> situation = new ArrayList();
+        /*situation.add(new Coup(1, new Position(8, 9)));
+        situation.add(new Coup(2, new Position(1, 1)));*/
+        
+        situation.add(new Coup(2, new Position(1, 3)));
+        situation.add(new Coup(2, new Position(2, 3)));
+        situation.add(new Coup(2, new Position(3, 6)));
+        situation.add(new Coup(2, new Position(6, 3)));
+        situation.add(new Coup(1, new Position(4, 5)));
+        situation.add(new Coup(1, new Position(4, 6)));
+        situation.add(new Coup(1, new Position(4, 7)));
+        situation.add(new Coup(1, new Position(4, 8)));
+        
+        jeu = factory.CreerPartieHumainVSAleatoire(situation);
+        
         jeu.jouerPartie();
         
     }
