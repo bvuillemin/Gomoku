@@ -23,8 +23,8 @@ public class JoueurHumain extends Joueur {
         int a = s.nextInt();
         System.out.println("Y ?");
         int b = s.nextInt();
-        while (etatJeu.getEtatPlateau(a - 1, b - 1) != 0) {
-            System.out.println("La case est déjà occupée !");
+        while (etatJeu.getEtatPlateau(a - 1, b - 1) != 0 || a <=0 || a > etatJeu.getLargeur() || b <=0 || b > etatJeu.getLongueur()) {
+            System.out.println("Coup non valide !");
             System.out.println("X ?");
             a = s.nextInt();
             System.out.println("Y ?");

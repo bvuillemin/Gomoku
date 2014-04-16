@@ -7,19 +7,14 @@ import gomoku.*;
 public abstract class JeuDePlateau {
     
     public Plateau plateau;
-    private Joueur[] tabJoueur;
-    private Joueur joueurCourant;
+    public Joueur[] tabJoueur;
+    public Joueur joueurCourant;
     public int valeur_victoire;
     
     public JeuDePlateau()
     {
         this.tabJoueur = new Joueur[2];
         this.valeur_victoire = 5;
-        
-        if(this.plateau.getDernierID() == 0)
-            this.joueurCourant = this.tabJoueur[0];
-        else
-            this.joueurCourant = this.tabJoueur[this.plateau.getDernierID() - 1];
     }
     
     public boolean setJoueur(int ordre, Joueur joueur) {

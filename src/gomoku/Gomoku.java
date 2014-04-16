@@ -65,6 +65,8 @@ public class Gomoku {
         jeu.setJoueur(1, jh);
         jeu.setJoueur(2, ja); 
         
+        jeu.plateau.jouer(new Coup(1, new Position(8, 9)));
+        jeu.plateau.jouer(new Coup(2, new Position(1, 1)));
         jeu.jouerPartie();
         
     }

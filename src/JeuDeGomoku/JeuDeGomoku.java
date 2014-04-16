@@ -8,6 +8,10 @@ public class JeuDeGomoku extends JeuDePlateau{
     public JeuDeGomoku() {
         super();
         this.plateau = new PlateauGomoku();
+        if(this.plateau.getDernierID() == 0)
+             this.joueurCourant = this.tabJoueur[0];
+         else
+             this.joueurCourant = this.tabJoueur[this.plateau.getDernierID() - 1];
     }
     
     public void setPlateau(PlateauGomoku plateau){
