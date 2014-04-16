@@ -67,10 +67,12 @@ public abstract class Plateau {
         return liste;
     }
 
-    public Coup annuler() {
-        Coup cp = this.historique.get(this.historique.size() - 1);
-        this.etatPlateau[cp.getPos().getX()][cp.getPos().getY()] = 0;
-        return cp;
+    public void annuler() {
+        if (this.historique.size() != 0) {
+            Coup cp = this.historique.get(this.historique.size() - 1);
+            this.etatPlateau[cp.getPos().getX() - 1][cp.getPos().getY() - 1] = 0;
+            this.historique.remove(this.historique.size() - 1);
+        }
     }
 
     public int getLongueur() {
@@ -96,7 +98,8 @@ public abstract class Plateau {
     public ArrayList<Coup> getSituation() {
         ArrayList<Coup> Liste_coup = new ArrayList<>();
         for (int i = 0; i < historique.size(); i++) {
-            Liste_coup.add(new Coup(historique.get(i).getId(), historique.get(i).getPos()));
+            Liste_coup.add(new Coup(historique.get(i).getId(),
+                    new Position(historique.get(i).getPos().getX(), historique.get(i).getPos().getY())));
         }
         return Liste_coup;
     }

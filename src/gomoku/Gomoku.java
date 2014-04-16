@@ -81,7 +81,7 @@ public class Gomoku {
         situation.add(new Coup(1, new Position(4, 7)));
         situation.add(new Coup(1, new Position(4, 8)));*/
         
-        jeu = factory.CreerPartieHumainVSAleatoire(situation);
+        jeu = factory.CreerPartieHumainVSMonteCarlo(situation);
         
         jeu.jouerPartie();
         
