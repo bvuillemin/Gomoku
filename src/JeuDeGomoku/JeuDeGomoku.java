@@ -49,9 +49,9 @@ public class JeuDeGomoku extends JeuDePlateau{
     
     public boolean partieNulle()
     {
-        for(int i = 1; i <= this.plateau.getLargeur(); i++)
+        for(int i = 0; i < this.plateau.getLargeur(); i++)
         {
-            for(int j = 1; j <= this.plateau.getLongueur(); j++)
+            for(int j = 0; j < this.plateau.getLongueur(); j++)
             {
                 if(this.plateau.getEtatPlateau(i, j) == 0)
                     return false;

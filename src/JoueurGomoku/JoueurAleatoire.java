@@ -23,7 +23,7 @@ public class JoueurAleatoire extends Joueur {
             x = Utilitaire.monRandom(1, etatJeu.getLongueur());
             y = Utilitaire.monRandom(1, etatJeu.getLargeur());
         }
-        p = new Position(x - 1, y - 1);
+        p = new Position(x, y);
         c = new Coup(this.id, p);
         return c;
     }

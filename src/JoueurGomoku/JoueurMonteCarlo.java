@@ -19,21 +19,23 @@ public class JoueurMonteCarlo extends Joueur {
     public Coup genererCoup(Plateau etatJeu) {
         Noeud meilleurCoup = null;
         ArrayList<Position> positionsPossibles = etatJeu.etatId(0);
-        int a;
+        Joueur j;
         for (Position p : positionsPossibles) {
             Coup cCourant = new Coup(id, p);
             Noeud nCourant = new Noeud(cCourant);
             etatJeu.jouer(cCourant);
             ArrayList<Coup> sit = etatJeu.getSituation();
             for (int i = 0; i < this.nbSimulation; i++) {
-                a = this.factory.CreerPartieAleatoireVSAleatoire(sit).jouerPartie().getId();
-                if (a == super.getId()) {
-                    nCourant.ajouterVictoire();
-                } else {
-                    nCourant.ajouterDefaite();
+                j = this.factory.CreerPartieAleatoireVSAleatoire(sit).jouerPartie();
+                if (j != null) {
+                    if (j.getId() == super.getId()) {
+                        nCourant.ajouterVictoire();
+                    } else {
+                        nCourant.ajouterDefaite();
+                    }
                 }
             }
-            if ((meilleurCoup == null) || (meilleurCoup.getMoyenne() < nCourant.getMoyenne())) {
+            if ((meilleurCoup == null) || (meilleurCoup.getNbSimulation() == 0) || (meilleurCoup.getMoyenne() < nCourant.getMoyenne())) {
                 meilleurCoup = nCourant;
             }
             etatJeu.annuler();
