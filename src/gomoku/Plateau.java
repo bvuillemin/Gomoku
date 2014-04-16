@@ -43,7 +43,8 @@ public abstract class Plateau {
     }
 
     public boolean jouer(Coup cp) {
-        if ((cp.getPos().getX() - 1) >= 0 && (cp.getPos().getX() - 1) < longueur && (cp.getPos().getY() - 1 >= 0) && (cp.getPos().getY() - 1 < largeur)) {
+        if (((cp.getPos().getX() - 1) >= 0) && ((cp.getPos().getX() - 1) < longueur)
+                && (cp.getPos().getY() - 1 >= 0) && ((cp.getPos().getY() - 1) < largeur)) {
             this.etatPlateau[cp.getPos().getX() - 1][cp.getPos().getY() - 1] = cp.getId();
             this.historique.add(cp);
             return true;

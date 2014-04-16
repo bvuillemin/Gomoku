@@ -25,9 +25,9 @@ public class JeuDeGomoku extends JeuDePlateau{
         {
             for(int j = 1; j <= 9; j++)
             {
-                if(this.plateau.CheckLigneId(new Position(i, j), this.valeur_victoire, 1))
+                if(this.plateau.CheckColonneId(new Position(i, j), this.valeur_victoire, 1))
                     return true;
-                if(this.plateau.CheckLigneId(new Position(i, j), this.valeur_victoire, 2))
+                if(this.plateau.CheckColonneId(new Position(i, j), this.valeur_victoire, 2))
                     return true;
             }
         }
@@ -36,9 +36,9 @@ public class JeuDeGomoku extends JeuDePlateau{
         {
             for(int j = 1; j <= 5; j++)
             {
-                if(this.plateau.CheckColonneId(new Position(i, j), this.valeur_victoire, 1))
+                if(this.plateau.CheckLigneId(new Position(i, j), this.valeur_victoire, 1))
                     return true;
-                if(this.plateau.CheckColonneId(new Position(i, j), this.valeur_victoire, 2))
+                if(this.plateau.CheckLigneId(new Position(i, j), this.valeur_victoire, 2))
                     return true;
             }
         }
