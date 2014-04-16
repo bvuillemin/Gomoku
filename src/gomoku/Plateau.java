@@ -92,6 +92,14 @@ public abstract class Plateau {
         }
     }
 
+    public ArrayList<Coup> getSituation() {
+        ArrayList<Coup> Liste_coup = new ArrayList<>();
+        for (int i = 0; i < historique.size(); i++) {
+            Liste_coup.add(new Coup(historique.get(i).getId(), historique.get(i).getPos()));
+        }
+        return Liste_coup;
+    }
+
     @Override
     public String toString() {
         StringBuilder grille = new StringBuilder();
