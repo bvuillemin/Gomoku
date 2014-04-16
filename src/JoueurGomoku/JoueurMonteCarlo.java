@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package JoueurGomoku;
 
 import JeuDeGomoku.*;
@@ -32,7 +27,7 @@ public class JoueurMonteCarlo extends Joueur {
             ArrayList<Coup> sit = etatJeu.getSituation();
             for (int i = 0; i < this.nbSimulation; i++) {
                 a = this.factory.CreerPartieAleatoireVSAleatoire(sit).jouerPartie().getId();
-                if (a == 2) {
+                if (a == super.getId()) {
                     nCourant.ajouterVictoire();
                 } else {
                     nCourant.ajouterDefaite();
