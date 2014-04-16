@@ -46,6 +46,20 @@ public class JeuDeGomoku extends JeuDePlateau{
         return false;
     }
     
+    
+    public boolean partieNulle()
+    {
+        for(int i = 1; i <= this.plateau.getLargeur(); i++)
+        {
+            for(int j = 1; j <= this.plateau.getLongueur(); j++)
+            {
+                if(this.plateau.getEtatPlateau(i, j) == 0)
+                    return false;
+            }
+        }
+        return true;
+    }
+    
     public boolean coupValide(Coup coup)
     {
         int x = coup.getPos().getX();

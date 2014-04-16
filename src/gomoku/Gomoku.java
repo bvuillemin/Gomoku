@@ -85,6 +85,8 @@ public class Gomoku {
         
         jeu.jouerPartie();
         
+        System.out.println(jeu.plateau.toString());
+        
     }
     
 }

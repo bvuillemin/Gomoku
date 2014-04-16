@@ -26,16 +26,14 @@ public abstract class Plateau {
             }
         }
     }
-    
-    public void initialiser(ArrayList<Coup> liste)
-    {
+
+    public void initialiser(ArrayList<Coup> liste) {
         for (int i = 0; i < this.longueur; i++) {
             for (int j = 0; j < this.largeur; j++) {
                 this.etatPlateau[i][j] = 0;
             }
         }
-        for(Coup c: liste)
-        {
+        for (Coup c : liste) {
             try {
                 this.jouer(c);
             } catch (Exception ex) {
@@ -67,9 +65,8 @@ public abstract class Plateau {
 
         return liste;
     }
-    
-    public Coup annuler()
-    {
+
+    public Coup annuler() {
         Coup cp = this.historique.get(this.historique.size() - 1);
         this.etatPlateau[cp.getPos().getX()][cp.getPos().getY()] = 0;
         return cp;
@@ -82,17 +79,17 @@ public abstract class Plateau {
     public int getLargeur() {
         return largeur;
     }
-    
-    public int getEtatPlateau(int x, int y){
+
+    public int getEtatPlateau(int x, int y) {
         return this.etatPlateau[x][y];
     }
-    
-    public int getDernierID()
-    {
-        if(!this.historique.isEmpty())
+
+    public int getDernierID() {
+        if (!this.historique.isEmpty()) {
             return this.historique.get(this.historique.lastIndexOf(this)).getId();
-        else 
+        } else {
             return 0;
+        }
     }
 
     @Override

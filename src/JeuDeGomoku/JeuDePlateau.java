@@ -45,11 +45,16 @@ public abstract class JeuDePlateau {
     
     public abstract boolean partieTerminee();
     
+    public abstract boolean partieNulle();
+    
     public abstract boolean coupValide(Coup coup);
     
     public Joueur jouerPartie(){
         boolean valide;
-        while(!partieTerminee())
+        boolean termine = partieTerminee();
+        boolean nul = false;
+        
+        while(!termine)
         {
             System.out.println(this.plateau.toString());
             valide = false;
@@ -63,9 +68,23 @@ public abstract class JeuDePlateau {
                 else
                     System.out.println("Coup non valide");
             }
+            
+            termine = partieTerminee();
+            if(partieNulle())
+            {
+                termine = true;
+                nul = true;
+            }
         }
-        System.out.println(this.joueurCourant);
-        return this.joueurCourant;
+        
+        if(nul){
+            System.out.println("Partie Nulle!!");
+            return null;
+        }
+        else{
+            System.out.println("Joueur gagnant:" + this.joueurCourant);
+            return this.joueurCourant;
+        }
     }
     
 }
