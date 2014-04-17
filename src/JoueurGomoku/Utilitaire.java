@@ -12,6 +12,7 @@ public class Utilitaire {
     {
         Random rand = new Random();
         int nombreAleatoire = rand.nextInt(max - min + 1) + min;
+        // Choisit un entier entre min (inclus) et max (exclus)
         return nombreAleatoire;
     }
 }

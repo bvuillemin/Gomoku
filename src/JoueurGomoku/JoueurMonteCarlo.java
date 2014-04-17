@@ -17,6 +17,7 @@ public class JoueurMonteCarlo extends Joueur {
 
     @Override
     public Coup genererCoup(Plateau etatJeu) {
+        //Algorithme repris de l'énoncé du TP
         Noeud meilleurCoup = null;
         ArrayList<Position> positionsPossibles = etatJeu.etatId(0);
         Joueur j;

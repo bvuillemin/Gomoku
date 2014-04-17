@@ -20,12 +20,16 @@ public class JoueurHumain extends Joueur {
         int b = s.nextInt();
         while (a <= 0 || a > etatJeu.getLongueur()
                 || b <= 0 || b > etatJeu.getLargeur()||
-                etatJeu.getEtatPlateau(a - 1, b - 1) != 0) {
+                // Teste si la position est en dehors du plateau
+                etatJeu.getEtatPlateau(a - 1, b - 1) != 0
+                // Teste si la case est déjà remplie
+                ) {
             System.out.println("Coup non valide !");
             System.out.println("X ?");
             a = s.nextInt();
             System.out.println("Y ?");
             b = s.nextInt();
+            //Ceci permet de demander un coup à chaque fois que le joueur se trompe sur les coordonnées à jouer
         }
         p = new Position(a, b);
         c = new Coup(this.id, p);

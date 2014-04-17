@@ -22,6 +22,7 @@ public class JoueurAleatoire extends Joueur {
         while (etatJeu.getEtatPlateau(x - 1, y - 1) != 0) {
             x = Utilitaire.monRandom(1, etatJeu.getLongueur());
             y = Utilitaire.monRandom(1, etatJeu.getLargeur());
+            // Tant que la case choisie est occupée, on recommence le choix aléatoire d'une case
         }
         p = new Position(x, y);
         c = new Coup(this.id, p);
