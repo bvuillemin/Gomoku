@@ -59,7 +59,7 @@ public abstract class Plateau {
         for (int i = 0; i < this.longueur; i++) {
             for (int j = 0; j < this.largeur; j++) {
                 if (this.etatPlateau[i][j] == id) {
-                    liste.add(new Position(i, j));
+                    liste.add(new Position(i+1, j+1));
                 }
             }
         }
@@ -68,11 +68,9 @@ public abstract class Plateau {
     }
 
     public void annuler() {
-        if (this.historique.size() != 0) {
             Coup cp = this.historique.get(this.historique.size() - 1);
             this.etatPlateau[cp.getPos().getX() - 1][cp.getPos().getY() - 1] = 0;
             this.historique.remove(this.historique.size() - 1);
-        }
     }
 
     public int getLongueur() {

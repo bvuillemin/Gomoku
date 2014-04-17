@@ -21,6 +21,8 @@ public class JoueurMonteCarlo extends Joueur {
         ArrayList<Position> positionsPossibles = etatJeu.etatId(0);
         Joueur j;
         for (Position p : positionsPossibles) {
+            System.out.println(p.getX());
+            System.out.println(p.getY());
             Coup cCourant = new Coup(this.id, p);
             Noeud nCourant = new Noeud(cCourant);
             etatJeu.jouer(cCourant);
