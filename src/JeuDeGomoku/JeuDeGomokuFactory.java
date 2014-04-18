@@ -46,7 +46,7 @@ public class JeuDeGomokuFactory implements JeuDePlateauFactory {
         PlateauGomoku p = new PlateauGomoku();
         JeuDeGomoku jeu = new JeuDeGomoku();
         JoueurHumain jh = new JoueurHumain(2);
-        JoueurMonteCarlo jm = new JoueurMonteCarlo(1, 2, this);
+        JoueurMonteCarlo jm = new JoueurMonteCarlo(1, 50, this);
 
         jeu.setPlateau(p);
         jeu.setJoueur(2, jh);
