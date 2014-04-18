@@ -1,6 +1,5 @@
 package JeuDeGomoku;
 
-import Principal.JeuDePlateau;
 import Principal.*;
 
 public class JeuDeGomoku extends JeuDePlateau{
@@ -8,18 +7,20 @@ public class JeuDeGomoku extends JeuDePlateau{
     public JeuDeGomoku() {
         super();
         setPlateau(new PlateauGomoku());
+        setValeurVictoire(5);
         if(getPlateau().getDernierID() == 0)
              setJoueurCourant(getJoueur(0));
          else
             setJoueurCourant(getJoueur(getPlateau().getDernierID() - 1));
     }
    
+    @Override
     public boolean partieTerminee()
     {
         //On teste chaque ligne possible pour les deux joueurs
-        for(int i = 1; i <= 5; i++)
+        for(int i = 1; i <= getPlateau().getLongueur() - getValeurVictoire() + 1; i++)
         {
-            for(int j = 1; j <= 9; j++)
+            for(int j = 1; j <= getPlateau().getLongueur(); j++)
             {
                 if(getPlateau().CheckColonneId(new Position(i, j), getValeurVictoire(), 1))
                     return true;
@@ -28,9 +29,9 @@ public class JeuDeGomoku extends JeuDePlateau{
             }
         }
         //On teste chaque colonne possible pour les deux joueurs
-        for(int i = 1; i <= 9; i++)
+        for(int i = 1; i <= getPlateau().getLargeur(); i++)
         {
-            for(int j = 1; j <= 5; j++)
+            for(int j = 1; j <= getPlateau().getLargeur() - getValeurVictoire() + 1; j++)
             {
                 if(getPlateau().CheckLigneId(new Position(i, j), getValeurVictoire(), 1))
                     return true;
@@ -41,6 +42,7 @@ public class JeuDeGomoku extends JeuDePlateau{
         //On retourne faux si personne ne gagne
         return false;
     }
+    
     
     
     public boolean partieNulle()

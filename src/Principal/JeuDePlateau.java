@@ -14,7 +14,6 @@ public abstract class JeuDePlateau {
 
     public JeuDePlateau() {
         this.tabJoueur = new Joueur[2];
-        this.valeur_victoire = 5;
     }
     
     public Plateau getPlateau(){
@@ -39,6 +38,10 @@ public abstract class JeuDePlateau {
     
     public int getValeurVictoire(){
         return this.valeur_victoire;
+    }
+    
+    public void setValeurVictoire(int valeur){
+        this.valeur_victoire = valeur;
     }
     
     public boolean setJoueur(int ordre, Joueur joueur) {

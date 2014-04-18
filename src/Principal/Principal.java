@@ -2,6 +2,7 @@ package Principal;
 
 import java.util.ArrayList;
 import JeuDeGomoku.*;
+import JeuDePuissance.*;
 
 
 public class Principal {
@@ -9,7 +10,7 @@ public class Principal {
     public static void main(String[] args) {
         
         JeuDePlateau jeu;
-        JeuDeGomokuFactory factory = new JeuDeGomokuFactory();
+        JeuDeGomokuFactory factoryGomoku = new JeuDeGomokuFactory();
         ArrayList<Coup> situation = new ArrayList();
         situation.add(new Coup(1, new Position(8, 9)));
         situation.add(new Coup(2, new Position(1, 1)));
@@ -23,7 +24,7 @@ public class Principal {
         situation.add(new Coup(1, new Position(4, 7)));
         situation.add(new Coup(1, new Position(4, 8)));*/
         
-        jeu = factory.CreerPartieHumainVSAleatoire(situation);
+        jeu = factoryGomoku.CreerPartieHumainVSHumain(situation);
         
         jeu.jouerPartie();
         

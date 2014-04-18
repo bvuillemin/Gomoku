@@ -1,10 +1,6 @@
 package JeuDeGomoku;
 
-import Principal.JeuDePlateauFactory;
-import Principal.JeuDePlateau;
-import Joueur.JoueurAleatoire;
-import Joueur.JoueurHumain;
-import Joueur.JoueurMonteCarlo;
+import Joueur.*;
 import Principal.*;
 import java.util.ArrayList;
 
