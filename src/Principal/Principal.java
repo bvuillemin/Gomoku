@@ -2,7 +2,6 @@ package Principal;
 
 import java.util.ArrayList;
 import JeuDeGomoku.*;
-import JeuDePuissance.*;
 
 
 public class Principal {
