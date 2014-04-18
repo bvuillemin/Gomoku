@@ -1,6 +1,7 @@
-package JeuDeGomoku;
+package Principal;
 
-import gomoku.Coup;
+import Principal.JeuDePlateau;
+import Principal.Coup;
 import java.util.ArrayList;
 
 public interface JeuDePlateauFactory {

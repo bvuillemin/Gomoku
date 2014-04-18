@@ -1,4 +1,4 @@
-package gomoku;
+package Principal;
 
 public class Position {
     private int x;

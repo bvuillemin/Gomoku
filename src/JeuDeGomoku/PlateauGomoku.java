@@ -1,4 +1,8 @@
-package gomoku;
+package JeuDeGomoku;
+
+import Principal.Plateau;
+import Principal.Position;
+import Principal.Position;
 
 public class PlateauGomoku extends Plateau {
 

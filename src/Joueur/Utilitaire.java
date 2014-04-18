@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package JoueurGomoku;
+package Joueur;
 import java.util.*;
 
 public class Utilitaire {

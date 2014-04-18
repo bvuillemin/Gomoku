@@ -1,5 +1,6 @@
-package gomoku;
+package Principal;
 
+import Principal.Position;
 import java.util.ArrayList;
 import java.lang.Object;
 import java.util.logging.Level;

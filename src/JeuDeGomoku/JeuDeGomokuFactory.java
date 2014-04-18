@@ -1,9 +1,11 @@
 package JeuDeGomoku;
 
-import JoueurGomoku.JoueurAleatoire;
-import JoueurGomoku.JoueurHumain;
-import JoueurGomoku.JoueurMonteCarlo;
-import gomoku.*;
+import Principal.JeuDePlateauFactory;
+import Principal.JeuDePlateau;
+import Joueur.JoueurAleatoire;
+import Joueur.JoueurHumain;
+import Joueur.JoueurMonteCarlo;
+import Principal.*;
 import java.util.ArrayList;
 
 public class JeuDeGomokuFactory implements JeuDePlateauFactory {
@@ -23,7 +25,7 @@ public class JeuDeGomokuFactory implements JeuDePlateauFactory {
         jeu.setJoueur(2, jh2);
 
         for (int i = 0; i < situation.size(); i++) {
-            jeu.plateau.jouer(situation.get(i));
+            jeu.getPlateau().jouer(situation.get(i));
         }
         return jeu;
     }
@@ -39,7 +41,7 @@ public class JeuDeGomokuFactory implements JeuDePlateauFactory {
         jeu.setJoueur(2, ja);
 
         for (int i = 0; i < situation.size(); i++) {
-            jeu.plateau.jouer(situation.get(i));
+            jeu.getPlateau().jouer(situation.get(i));
         }
         return jeu;
     }
@@ -55,7 +57,7 @@ public class JeuDeGomokuFactory implements JeuDePlateauFactory {
         jeu.setJoueur(1, jm);
 
         for (int i = 0; i < situation.size(); i++) {
-            jeu.plateau.jouer(situation.get(i));
+            jeu.getPlateau().jouer(situation.get(i));
         }
         return jeu;
     }
@@ -71,7 +73,7 @@ public class JeuDeGomokuFactory implements JeuDePlateauFactory {
         jeu.setJoueur(2, ja2);
 
         for (int i = 0; i < situation.size(); i++) {
-            jeu.plateau.jouer(situation.get(i));
+            jeu.getPlateau().jouer(situation.get(i));
         }
         return jeu;
     }

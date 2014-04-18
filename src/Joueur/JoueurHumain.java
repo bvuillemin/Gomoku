@@ -1,6 +1,6 @@
-package JoueurGomoku;
+package Joueur;
 
-import gomoku.*;
+import Principal.*;
 import java.util.Scanner;
 
 public class JoueurHumain extends Joueur {

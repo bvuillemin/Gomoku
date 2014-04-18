@@ -1,7 +1,8 @@
-package JoueurGomoku;
+package Joueur;
 
+import Principal.JeuDePlateauFactory;
+import Principal.*;
 import JeuDeGomoku.*;
-import gomoku.*;
 import java.util.ArrayList;
 
 public class JoueurMonteCarlo extends Joueur {

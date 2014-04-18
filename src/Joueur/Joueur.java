@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JoueurGomoku;
-import gomoku.*;
+package Joueur;
+import Principal.Coup;
+import Principal.Plateau;
 
 
 public abstract class Joueur {

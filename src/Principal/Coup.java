@@ -1,4 +1,6 @@
-package gomoku;
+package Principal;
+
+import Principal.Position;
 
 public class Coup {
     private int id;
