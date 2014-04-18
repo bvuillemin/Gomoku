@@ -23,14 +23,12 @@ public class JoueurMonteCarlo extends Joueur {
         ArrayList<Position> positionsPossibles = etatJeu.etatId(0);
         Joueur j;
         for (Position p : positionsPossibles) {
-            System.out.println(p.getX());
-            System.out.println(p.getY());
             Coup cCourant = new Coup(this.id, p);
             Noeud nCourant = new Noeud(cCourant);
             etatJeu.jouer(cCourant);
             ArrayList<Coup> sit = etatJeu.getSituation();
             for (int i = 0; i < this.nbSimulation; i++) {
-                j = this.factory.CreerPartieAleatoireVSAleatoire(sit).jouerPartie();
+                j = this.factory.CreerPartieAleatoireVSAleatoire(sit).jouerPartie(false);
                 if (j != null) {
                     if (j.getId() == super.getId()) {
                         nCourant.ajouterVictoire();
@@ -45,7 +43,6 @@ public class JoueurMonteCarlo extends Joueur {
             }
             etatJeu.annuler();
         }
-        System.out.println("OK");
         return meilleurCoup.getCoup();
     }
 }

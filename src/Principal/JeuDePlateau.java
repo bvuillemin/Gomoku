@@ -15,35 +15,35 @@ public abstract class JeuDePlateau {
     public JeuDePlateau() {
         this.tabJoueur = new Joueur[2];
     }
-    
-    public Plateau getPlateau(){
+
+    public Plateau getPlateau() {
         return this.plateau;
     }
-    
-    public Joueur getJoueurCourant(){
+
+    public Joueur getJoueurCourant() {
         return this.joueurCourant;
     }
-    
-    public Joueur getJoueur(int ordre){
+
+    public Joueur getJoueur(int ordre) {
         return this.tabJoueur[ordre];
     }
-    
-    public void setPlateau(Plateau plateau){
+
+    public void setPlateau(Plateau plateau) {
         this.plateau = plateau;
     }
-    
-    public void setJoueurCourant(Joueur joueur){
+
+    public void setJoueurCourant(Joueur joueur) {
         this.joueurCourant = joueur;
     }
-    
-    public int getValeurVictoire(){
+
+    public int getValeurVictoire() {
         return this.valeur_victoire;
     }
-    
-    public void setValeurVictoire(int valeur){
+
+    public void setValeurVictoire(int valeur) {
         this.valeur_victoire = valeur;
     }
-    
+
     public boolean setJoueur(int ordre, Joueur joueur) {
         if (ordre == 1 || ordre == 2) {
             tabJoueur[ordre - 1] = joueur;
@@ -68,13 +68,15 @@ public abstract class JeuDePlateau {
         }
     }
 
-    public Joueur jouerPartie() {
+    public Joueur jouerPartie(boolean affichage) {
         boolean valide;
         boolean termine = partieTerminee();
         boolean nul = false;
 
         while (!termine) {
-            System.out.println(this.plateau.toString());
+            if (affichage) {
+                System.out.println(this.plateau.toString());
+            }
             valide = false;
             this.joueurCourant = joueurSuivant();
 
@@ -84,7 +86,9 @@ public abstract class JeuDePlateau {
                 if (valide) {
                     this.plateau.jouer(c);
                 } else {
-                    System.out.println("Coup non valide");
+                    if (affichage) {
+                        System.out.println("Coup non valide");
+                    }
                 }
             }
 
@@ -96,10 +100,14 @@ public abstract class JeuDePlateau {
         }
 
         if (nul) {
-            System.out.println("Partie Nulle!!");
+            if (affichage) {
+                System.out.println("Partie Nulle!!");
+            }
             return null;
         } else {
-            System.out.println("Joueur gagnant:" + this.joueurCourant.toString());
+            if (affichage) {
+                System.out.println("Joueur gagnant:" + this.joueurCourant.toString());
+            }
             return this.joueurCourant;
         }
     }
