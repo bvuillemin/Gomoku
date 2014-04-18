@@ -99,7 +99,7 @@ public abstract class JeuDePlateau {
             System.out.println("Partie Nulle!!");
             return null;
         } else {
-            System.out.println("Joueur gagnant:" + this.joueurCourant);
+            System.out.println("Joueur gagnant:" + this.joueurCourant.toString());
             return this.joueurCourant;
         }
     }

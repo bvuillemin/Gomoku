@@ -21,4 +21,10 @@ public abstract class Joueur {
     }
     
     public abstract Coup genererCoup(Plateau etatJeu);
+    
+    @Override
+    public String toString()
+    {
+        return Integer.toString(id);
+    }
 }
