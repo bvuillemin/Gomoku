@@ -44,6 +44,7 @@ public class Principal {
                 case 4:
                     situation.add(new Coup(1, new Position(8, 9)));
                     situation.add(new Coup(2, new Position(1, 1)));
+                    jeu = factoryGomoku.CreerPartieHumainVSAleatoire(situation);
                     break;
                 default:
                     System.out.println("Erreur dans la sélection");
